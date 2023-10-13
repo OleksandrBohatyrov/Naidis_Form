@@ -36,7 +36,7 @@ namespace Naidis_Form
         public TreeForm() 
         { 
             this.Height= 1280;
-            this.Width= 720;
+            this.Width= 1200;
             this.Text = "Vorm põhielementidega";
             tree= new TreeView();
             tree.Dock = DockStyle.Left;
@@ -44,6 +44,7 @@ namespace Naidis_Form
             tree.AfterSelect += Tree_AfterSelect;
             TreeNode treeNode= new TreeNode("Elemendid");
             treeNode.Nodes.Add(new TreeNode("Nupp-Button"));
+
 
             btn = new Button();
             btn.Height = 40;
@@ -153,6 +154,10 @@ namespace Naidis_Form
             dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
 
+            // trianger
+            treeNode.Nodes.Add(new TreeNode("Kolmnurk"));
+            
+
 
 
             this.Controls.Add(dataGrid);
@@ -181,11 +186,8 @@ namespace Naidis_Form
 
 
 
-
- 
-
-
         }
+
 
         private void Btn2_Click(object? sender, EventArgs e)
         {
@@ -206,10 +208,6 @@ namespace Naidis_Form
                 lb.Items.Remove(lb.SelectedItem);
             }
         }
-
-
-
-  
 
         private void treeView1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -344,6 +342,11 @@ namespace Naidis_Form
                 tree.SelectedNode = null;
                 isLblVisible = !isLblVisible;
                 lb.Visible = !isLblVisible;
+            }
+            else if (e.Node.Text =="Kolmnurk")
+            {
+                var myForm = new Kolmnurk();
+                myForm.Show();
             }
         }
 
