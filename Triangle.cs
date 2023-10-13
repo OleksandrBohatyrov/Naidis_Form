@@ -50,7 +50,7 @@ namespace Naidis_Form
             double h = 2 * s / a;
             return h;
 
-            //double p2 = 0;
+            ///double p2 = 0;
             //p2 = (a + b + c)/2;
      
             //double h = 0;
@@ -58,11 +58,25 @@ namespace Naidis_Form
             //return h;
         }
 
-        public double OutputM()
+        public double OutputMC()
+        {
+            double m = 0;
+            
+            m = (1 / 2) * Math.Sqrt(2 * Math.Pow(a, 2))+(2 * Math.Pow(b, 2))-Math.Pow(c,2);
+            return m;
+        }
+        public double OutputMA()
         {
             double m = 0;
 
-            m = (1 / 2) * Math.Sqrt(2 * Math.Pow(a, 2))+(2 * Math.Pow(b, 2))-Math.Pow(c,2);
+            m = (1 / 2) * Math.Sqrt(2 * Math.Pow(c, 2)) + (2 * Math.Pow(b, 2)) - Math.Pow(a, 2);
+            return m;
+        }
+        public double OutputMB()
+        {
+            double m = 0;
+
+            m = (1 / 2) * Math.Sqrt(2 * Math.Pow(a, 2)) + (2 * Math.Pow(c, 2)) - Math.Pow(b, 2);
             return m;
         }
 
