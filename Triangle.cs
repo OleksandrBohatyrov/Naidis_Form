@@ -22,7 +22,21 @@ namespace Naidis_Form
             c = C;
 
         }
- 
+
+        public bool IsEquilateral()
+        {
+            return a == b && a == c;
+        }
+
+        public bool IsIsosceles()
+        {
+            return a == b || a == c || b == c;
+        }
+
+        public bool IsScalene()
+        {
+            return a != b && a != c && b != c;
+        }
 
 
         public string outputA()

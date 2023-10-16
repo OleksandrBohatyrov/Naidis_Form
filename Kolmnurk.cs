@@ -17,14 +17,9 @@ namespace Naidis_Form
         private TextBox txtPointB;
         private TextBox txtPointC;
         private Button btnDrawTriangle;
-        private Button btnCalculateHeight;
-        private Button btnCalculateArea;
-        private Button btnCalculatePerimeter;
         private Label lblHeightResult;
         private Label lblAreaResult;
         private Label lblPerimeterResult;
-        private Triangle triangle;
-
         private ListBox lstTriangleInfo;
 
         public Kolmnurk()
@@ -43,37 +38,42 @@ namespace Naidis_Form
             lstTriangleInfo.Items.Clear();
         }
 
+
+
+
         private void InitializeUI()
         {
      
             txtPointA = new TextBox();
             txtPointA.Location = new Point(10, 10);
             txtPointA.Size = new Size(150, 25);
+            
 
             txtPointB = new TextBox();
             txtPointB.Location = new Point(10, 40);
             txtPointB.Size = new Size(150, 25);
+       
 
             txtPointC = new TextBox();
             txtPointC.Location = new Point(10, 70);
             txtPointC.Size = new Size(150, 25);
 
             btnDrawTriangle = new Button();
-            btnDrawTriangle.Text = "Отрисовать";
+            btnDrawTriangle.Text = "Joonista";
             btnDrawTriangle.Width = 100;
             btnDrawTriangle.Location = new Point(10, 100);
             btnDrawTriangle.Click += btnDrawTriangle_Click;
 
             lblHeightResult = new Label();
-            lblHeightResult.Text = "Высота: ";
+            lblHeightResult.Text = "Kõrgus: ";
             lblHeightResult.Location = new Point(10, 220);
 
             lblAreaResult = new Label();
-            lblAreaResult.Text = "Площадь: ";
+            lblAreaResult.Text = "Pindala: ";
             lblAreaResult.Location = new Point(10, 250);
 
             lblPerimeterResult = new Label();
-            lblPerimeterResult.Text = "Периметр: ";
+            lblPerimeterResult.Text = "Perimeeter: ";
             lblPerimeterResult.Location = new Point(10, 280);
 
             lstTriangleInfo = new ListBox();
@@ -137,6 +137,9 @@ namespace Naidis_Form
                     lstTriangleInfo.Items.Add($"Mediaan: {triangle.OutputMA()}");
                     lstTriangleInfo.Items.Add($"Kõrgus: {triangle.OutputH()}");
                     lstTriangleInfo.Items.Add($"Olemas?: {triangle.ExistTriangle}");
+                    lstTriangleInfo.Items.Add($"Võrdkülne: {triangle.IsEquilateral()}");
+                    lstTriangleInfo.Items.Add($"Võrdhaarne: {triangle.IsIsosceles()}");
+                    lstTriangleInfo.Items.Add($"Erikülne: {triangle.IsScalene()}");
                 }
                 else
                 {
