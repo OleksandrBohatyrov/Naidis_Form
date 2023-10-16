@@ -45,16 +45,19 @@ namespace Naidis_Form
         {
      
             txtPointA = new TextBox();
+            txtPointA.PlaceholderText = "Sisesta a pool";
             txtPointA.Location = new Point(10, 10);
             txtPointA.Size = new Size(150, 25);
             
 
             txtPointB = new TextBox();
+            txtPointB.PlaceholderText = "Sisesta b pool";
             txtPointB.Location = new Point(10, 40);
             txtPointB.Size = new Size(150, 25);
        
 
             txtPointC = new TextBox();
+            txtPointC.PlaceholderText = "Sisesta c pool";
             txtPointC.Location = new Point(10, 70);
             txtPointC.Size = new Size(150, 25);
 
@@ -143,12 +146,12 @@ namespace Naidis_Form
                 }
                 else
                 {
-                    MessageBox.Show("не существует.");
+                    MessageBox.Show("Ei ole olemas.");
                 }
             }
             else
             {
-                MessageBox.Show("введите корректные значения сторон треугольника.");
+                MessageBox.Show("Kirjuta kolmnurga külgede korrektsed väärtused.");
             }   
         }
         
