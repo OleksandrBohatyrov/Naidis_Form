@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,15 +15,14 @@ namespace Naidis_Form
         public double h;
         public double m;
 
-        public Triangle(double A, double B, double C, double H, double M)
+        public Triangle(double A, double B, double C)
         {
             a = A;
             b = B;
             c = C;
-            h = H;
-            m = M;
-        }
 
+        }
+ 
 
 
         public string outputA()
@@ -48,6 +48,9 @@ namespace Naidis_Form
 
             double s = Surface();
             double h = 2 * s / a;
+            Debug.WriteLine("a: " + a);
+            Debug.WriteLine("s: " + s);
+            Debug.WriteLine("h: " + h);
             return h;
 
             ///double p2 = 0;
